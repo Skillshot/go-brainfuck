@@ -4,6 +4,13 @@ import (
 	"fmt"
 )
 
+func main() {
+	//moveFirstNumberToNextCell := "[->+<].>."
+	moveFirstNumberToNextCell := "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
+
+	Interpret(moveFirstNumberToNextCell)
+}
+
 type Memory struct {
 	cells   [200]byte
 	pointer int
@@ -15,13 +22,6 @@ func NewMemory(pointer int, initCells map[int]byte) *Memory {
 		cells[i] = val
 	}
 	return &Memory{pointer: pointer, cells: cells}
-}
-
-func main() {
-	//moveFirstNumberToNextCell := "[->+<].>."
-	moveFirstNumberToNextCell := "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
-
-	Interpret(moveFirstNumberToNextCell)
 }
 
 type ProcessInstruction func(commandsStack *[][]Command)
