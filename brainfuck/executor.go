@@ -18,8 +18,8 @@ func compile(program string) []command {
 }
 
 func run(commands []command, memory *memory) {
-	for _, command := range commands {
-		command.execute(memory)
+	for _, cmd := range commands {
+		cmd.execute(memory)
 	}
 }
 
