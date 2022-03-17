@@ -14,6 +14,7 @@ func (MoveBackward) execute(memory *memory) {
 	memory.pointer--
 }
 
+// IncrementCellValue is a command that increments the current cell value.
 type IncrementCellValue struct{}
 
 func (IncrementCellValue) execute(memory *memory) {
