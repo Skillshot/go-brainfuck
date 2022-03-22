@@ -1,5 +1,8 @@
 package brainfuck
 
+// Interpret interprets brainfuck program.
+//
+// Does not return anything, writes the result of interpretation to system.out.
 func Interpret(program string) {
 	// As now we have a loop command it makes sense to optimize the program
 	// so we don't go through the string forward and backward.

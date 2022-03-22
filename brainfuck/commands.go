@@ -38,10 +38,10 @@ type Loop struct {
 	commands []command
 }
 
-func (l Loop) execute(memory *memory) {
-	for memory.cells[memory.pointer] != 0 {
+func (l Loop) execute(m *memory) {
+	for m.cells[m.pointer] != 0 {
 		for _, c := range l.commands {
-			c.execute(memory)
+			c.execute(m)
 		}
 	}
 }
